@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" value="<%= booking.user.firstname %>">
+    <input type="text" value="<%= booking.user.lastname %>">
+    <input type="text" value="<%= booking.user.email %>">
+    <input type="text" value="<%= booking.user.department %>">
+    <input type="text" value="<%= booking.user.semester %>">
+
+    <input type="text" value="<%= booking.book.name %>" name="name">
+    <input type="text" value="<%= booking.book.author %>" name="author">
+    <input type="text" value="<%= booking.book.department %>" name="department">
+    <input type="text" value="<%= booking.book.semester %>" name="semester">
+        
+    <form action="/api/librarian/confirm" method="POST">
+        <input type="hidden" value="<%= booking.id %>" name="bookingId">
+        
+        <input type="hidden" value="<%= booking.user.id %>" name='userId'>
+
+        <input type="hidden" value="<%= booking.book.id %>" name="bookId">
+
+        <input type="submit" value="Confirm Booking">
+    </form>
+</body>
+</html>

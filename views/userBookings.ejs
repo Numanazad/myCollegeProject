@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: table;
+            padding:10px;
+            margin:auto;
+            width:25%;
+            background-color: rgb(90,120,160);
+        }
+        .row{
+            display: table-row;
+            padding:10px;
+        }
+        .row input label{
+            display: table-cell;
+            margin:4px;
+        }
+        #submitbutton{
+            margin-top:10px;
+            background-color: coral;
+        }
+        #submitbutton:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Confirm Booking</h3>
+        <h3>User Details</h3>
+        <div class="row">
+            <label for="firstname">First Name:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="username" value="<%= user.firstname %>" name="firstname">
+        </div>
+        <div class="row">
+            <label for="lastname">Last Name:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="username" value="<%= user.lastname %>" name="lastname">
+        </div>
+        <div class="row">
+            <label for="userdepartment">Department:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="userdepartment" value="<%= user.department %>" name="userdepartment">
+        </div>
+        <div class="row">
+            <label for="usersemester">Semester:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="usersemester" value="<%= user.semester %>" name="usersemester">
+        </div>
+        <div class="row">
+            <label for="email">Email:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="email" value="<%= user.email %>" name="email">
+        </div>
+
+        <h3>Book details</h3>
+        <div class="row">
+            <label for="bookname">Name:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="bookname" value="<%= books.name %>" name="bookname">
+        </div>
+        <div class="row">
+            <label for="bookauthor">Author:</label>
+        </div>
+        <div class="row">
+            <input type="text" id="bookauthor" value="<%= books.author %>" name="bookauthor">
+        </div>
+        <div class="row">
+            <label for="booksemester">Semester</label>
+        </div>
+        <div class="row">
+            <input type="text" id="booksemester" value="<%= books.semester %>" name="booksemester">
+        </div>
+        <div class="row">
+            <label for="bookdepartment">Department</label>
+        </div>
+        <div class="row">
+            <input type="text" id="bookdepartment" value="<%= books.department %>" name="bookdepartment">
+        </div>
+    </div>
+
+    <form action="/api/users/books" method="POST">
+        <div class="container">
+            <div class="row">
+                <input type="hidden" value="<%= user._id %>" name="userId">
+            </div>
+            <div class="row">
+                <input type="hidden" value="<%= books.id %>" name="bookId">
+            </div>
+            <div class="row">
+                <input type="submit" value="Confirm Booking" id="submitbutton">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

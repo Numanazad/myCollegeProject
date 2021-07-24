@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formContainer{
+            display:table;
+        }
+        .row{
+            display:table-row;
+        }
+        .row label, .row input{
+            display: table-cell;
+            padding:2px;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="/api/users/login">Login</a></button>
+    <h3>User Registration</h3>
+    <form action="/api/users" method="POST">
+        <div class="formContainer">
+            <div class="row">
+                <tr>
+                    <label for="fname">FirstName:</label>
+                    <input type="text" id='fname' name="firstname">
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="lname">LastName:</label>
+                    <input type="text" id='lname' name="lastname">
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="email">Email:</label>
+                    <input type="email" id='email' name="email">
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="department">Department:</label>
+                    <select id="department" name="department">
+                        <option value="cse">CSE</option>
+                        <option value="ete">ETE</option>
+                        <option value="civil">CIVIL</option>
+                        <option value="mech">MECH</option>
+                    </select>
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="semester">Semester:</label>
+                    <select name="semester" id="semester">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="password">Password:</label>
+                    <input type="text" id='password' name="password">
+                </tr>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

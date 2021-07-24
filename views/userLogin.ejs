@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formContainer{
+            display:table;
+        }
+        .row{
+            display:table-row;
+        }
+        .row label, .row input{
+            display: table-cell;
+            padding:2px;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="/api/users">Register</a></button>
+    <h3>User Login</h3>
+    <form action="/api/users/login" method="POST">
+        <div class="formContainer">
+            <div class="row">
+                <tr>
+                    <label for="email">Email:</label>
+                    <input type="email" id='email' name="email">
+                </tr>
+            </div>
+            <div class="row">
+                <tr>
+                    <label for="password">Password:</label>
+                    <input type="text" id='password' name="password">
+                </tr>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
