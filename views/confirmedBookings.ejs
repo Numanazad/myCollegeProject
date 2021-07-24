@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            display: table;
+            width:90%;
+            margin:10px auto;
+            background-color: bisque;
+            padding:10px;
+        }
+        .row{
+            display: table-row;
+            padding: 5px;
+        }
+        .confirm{
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Librarian Page (To see the total bookings and confirm or cancel booking)</h1>
+    <div class="table">
+        <% bookings.forEach(function(booking){ %>
+        <div class="row">
+            <div><tr>User Who Booked The Book</tr></div>
+        </div>
+        <div class="row">
+            <div><tr><%= booking.book.name %></tr></div>
+        </div>    
+        <div class="row">
+            <div>
+                <tr> <a href="/api/librarian/book/renew/<%= booking.id %>"> <button class='confirm'>Renew</button> </a> </tr>
+                <tr> <a href="/api/librarian/book/return/<%= booking.id %>"> <button class='confirm'>Return</button> </a> </tr>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</body>
+</html>

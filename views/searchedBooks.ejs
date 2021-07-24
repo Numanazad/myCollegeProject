@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color:rgb(198,46,198);
+            font-size: 1.5em;
+            background-color: #ccc;
+            padding:20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        a{
+            margin-right: 10px;
+            list-style: none;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        .container{
+            display: table;
+            margin-bottom: 10px;
+        }
+        .row{
+            display: table-row;
+        }
+        .row label, .row input{
+            display: table-cell;
+            padding: 2px;
+        }
+        .listContainer{
+            width:90%;
+            margin:20px auto;
+            border:1px solid;
+            background-color: beige;
+            color:#43f
+        }
+        #tableId tr td{
+            padding:5px;
+            margin:10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Books available in library</h1>
+    <a href="/">Dashboard</a>
+    <a href="/api/users/notes">Notes</a>
+    <div class="listContainer">
+        <h3>Books list</h3>
+        <table id='tableId'>
+            <% books.forEach(function(book){ %>
+            <tr>
+                <td><%= book.name %></td>
+                <td><%= book.author %></td>
+                <td><%= book.quantity %></td>
+                <td><a href="/api/users/books/<%= book.id %>">Book it</a></td>
+            </tr>
+            <% }) %>
+        </table>
+    </div>
+</body>
+</html>

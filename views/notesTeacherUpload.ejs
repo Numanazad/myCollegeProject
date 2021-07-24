@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: table;
+            padding:10px;
+            margin:auto;
+            width:25%;
+            background-color: rgb(90,120,160);
+        }
+        .row{
+            display: table-row;
+            padding:10px;
+        }
+        .row input label{
+            display: table-cell;
+            margin:4px;
+        }
+        #submitbutton{
+            margin-top:10px;
+            background-color: coral;
+        }
+        #submitbutton:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/api/teacher/upload" method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <div class="row">
+                <label for="notes">Notes:</label>
+            </div>
+            <div class="row">
+                <input type="file" name="notes" id="notes">
+            </div>
+            <br>
+            <div class="row">
+                <label for="name">Name:</label>
+            </div>
+            <div class="row">
+                <input type="text" name="name" id="name">
+            </div>
+            <br>
+            <div class="row">
+                <label for="department">Department:</label>
+            </div>
+            <div class="row">
+                <input type="text" name="department" id="department">
+            </div>
+            <br>
+            <div class="row">
+                <label for="semester">Semester:</label>
+            </div>
+            <div class="row">
+                <input type="text" id="semester" name="semester">
+            </div><br>
+                <input type="submit" value="Confirm Booking" id="submitbutton">
+        </div>
+    </form>
+</body>
+</html>
